@@ -21,11 +21,18 @@
 
         <button onclick="calculate()">احسب</button>
 
-        <label for="total">المبلغ الكلي بعد الاستثمار:</label>
-        <input type="text" id="total" readonly>
+        <label for="total" id="totalLabel" style="display: none;">المبلغ الكلي بعد الاستثمار:</label>
+        <input type="text" id="total" readonly style="display: none;">
 
-        <label for="monthly">المبلغ الشهري:</label>
-        <input type="text" id="monthly" readonly>
+        <label for="monthly" id="monthlyLabel" style="display: none;">المبلغ الشهري:</label>
+        <input type="text" id="monthly" readonly style="display: none;">
+
+        <button id="reduceMonthlyBtn" style="display: none;" onclick="showMonthlyInput()">تقليل المبلغ الشهري مقابل زيادة في المبلغ الكلي</button>
+        <div id="monthlyInputContainer" style="display: none;">
+            <label for="newMonthly">أدخل المبلغ الشهري الجديد (الأقل):</label>
+            <input type="number" id="newMonthly" placeholder="المبلغ الشهري الجديد">
+            <button onclick="adjustTotal()">احسب</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
