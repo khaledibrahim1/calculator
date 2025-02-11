@@ -1,0 +1,153 @@
+/* التصميم العام */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+/* تعديلات على القائمة المنسدلة */
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
+    appearance: none; /* لإزالة السهم الافتراضي */
+    -webkit-appearance: none; /* للتأكد من التوافق مع المتصفحات */
+    -moz-appearance: none;
+}
+
+/* عند فتح القائمة المنسدلة */
+select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* تعديلات على الخيارات داخل القائمة المنسدلة */
+select option {
+    background: #fff; /* خلفية بيضاء */
+    color: #000; /* نص أسود */
+    font-size: 16px;
+    padding: 10px;
+}
+
+/* التأكد من أن الخيارات تكون داكنة عند الفتح */
+select option:checked {
+    background: #f0f0f0; /* خلفية فاتحة عند التحديد */
+    color: #000; /* نص أسود */
+}
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+input[readonly] {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: not-allowed;
+    color: #fff;
+}
+
+/* تصميم مربعات النتائج */
+#total, #monthly {
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* توسيط مربع السنوات */
+.years-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.years-container label {
+    margin-right: 10px;
+}
+
+/* تأثيرات إضافية */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator {
+    animation: fadeIn 0.8s ease-in-out;
+}
